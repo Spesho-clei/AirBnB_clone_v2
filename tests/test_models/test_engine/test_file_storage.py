@@ -4,8 +4,9 @@ import unittest
 from models.base_model import BaseModel
 from models import storage
 import os
+import env
 
-
+@unittest.skipIf(env.DBTYPE, "not testing db storage")
 class test_fileStorage(unittest.TestCase):
     """ Class to test the file storage method """
 
@@ -107,3 +108,6 @@ class test_fileStorage(unittest.TestCase):
         from models.engine.file_storage import FileStorage
         print(type(storage))
         self.assertEqual(type(storage), FileStorage)
+
+if __name__ == "__main__":
+    unittest.main()        

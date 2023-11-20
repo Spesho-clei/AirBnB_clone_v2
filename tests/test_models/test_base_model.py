@@ -6,8 +6,9 @@ import datetime
 from uuid import UUID
 import json
 import os
+import env
 
-
+@unittest.skipIf(env.DBTYPE, "not testing db storage")
 class test_basemodel(unittest.TestCase):
     """ """
 
