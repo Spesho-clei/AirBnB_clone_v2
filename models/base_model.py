@@ -57,7 +57,7 @@ class BaseModel:
         dictionary = self.__dict__.copy()
         dictionary['__class__'] = self.__class__.__name__
         for i in dictionary:
-            if type(dictionary[i] is datetime:
+            if type(dictionary[i]) is datetime:
                 dictionary[i] = dictionary[i].isoformat()
         if '_sa_instance_state' in dictionary.keys():
             del dictionary['_sa_instance_state']
